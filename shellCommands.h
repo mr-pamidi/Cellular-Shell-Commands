@@ -10,12 +10,20 @@
 
 #include <string.h>
 #include <stdint.h>
-#include <stdlib.h> //atoi
-#include <stdio.h> //snprintf
+#include <stdlib.h> //atoi()
+#include <stdio.h> //snprintf()
 #include "kmpSearch.h"
 
-#define MAX_PHONE_NUM_LENGTH   12
-#define MAX_SUBSCRIBERS         5
+#ifndef false
+#define false   0
+#endif
+
+#ifndef true
+#defne true     1
+#endif
+
+#define MAX_PHONE_NUM_LENGTH        12
+#define MAX_SUBSCRIBERS             5
 #define MAX_FULLNAME_LENGTH         25
 
 #define US_CANADA_COUNTRY_CODE      "+1"
@@ -35,12 +43,12 @@
 
 struct subscribersInfo
 {
-    char mobileNum[MAX_SUBSCRIBERS][MAX_PHONE_NUM_LENGTH+1];
-    char fullName[MAX_SUBSCRIBERS][MAX_FULLNAME_LENGTH+1];
+    char mobileNum[MAX_SUBSCRIBERS][MAX_PHONE_NUM_LENGTH+1]; //add space for null-terminate
+    char fullName[MAX_SUBSCRIBERS][MAX_FULLNAME_LENGTH+1]; //add space for null-terminate
     uint8_t subscriberIdx;
 };
 
-static uint8_t shellMenuStatus =0;
+static uint8_t shellMenuStatus =0; //TDB//Develop sub-menu
 
 static void addNewSubscriberNum(const char *subscriberMobileNumb);
 static void addNewSubscriberName(const char *subscriberFullName);
@@ -50,4 +58,4 @@ static void sendShellResponse(const char *strr);
 void parseShellCommands(const char *buffer);
 static uint8_t validatePhoneNum(const char *buffer);
 
-#endif /* shellCommands.h */
+#endif /* end of shellCommands.h */
