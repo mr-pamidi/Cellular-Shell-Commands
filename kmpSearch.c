@@ -16,12 +16,12 @@
  
  Output: String match starting position
  ============================================================*/
-int KMPsearch(const char *haystack, const char *needle)
+int32_t KMPsearch(const char *haystack, const char *needle)
 {
-    int haystackIdx=0, needleIdx=0;
-    unsigned long haystackLen = strlen(haystack);
-    unsigned long needleLen = strlen(needle);
-    int tableT[needleLen];
+    int32_t haystackIdx=0, needleIdx=0;
+    uint64_t haystackLen = strlen(haystack);
+    uint64_t needleLen = strlen(needle);
+    int32_t tableT[needleLen];
     
     generateKMPtable(needle, tableT);
     
@@ -59,11 +59,11 @@ int KMPsearch(const char *haystack, const char *needle)
  
  Output: None
  ============================================================*/
-static void generateKMPtable(const char *needle, int *table)
+static void generateKMPtable(const char *needle, int32_t *table)
 {
-    int currentPos = 1;
-    int needleZeroIdx = 0;
-    unsigned long needleLen = strlen(needle);
+    int32_t currentPos = 1;
+    int32_t needleZeroIdx = 0;
+    uint64_t needleLen = strlen(needle);
     table[0] = -1; //initialize
     
     while(currentPos < needleLen)
