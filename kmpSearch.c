@@ -7,6 +7,15 @@
 
 #include "kmpSearch.h"
 
+/*===========================================================
+ Function Name: KMPsearch
+ 
+ Inputs:
+    haystack - String to be searched
+    needle - word sought
+ 
+ Output: String match starting position
+ ============================================================*/
 int KMPsearch(const char *haystack, const char *needle)
 {
     int haystackIdx=0, needleIdx=0;
@@ -40,6 +49,16 @@ int KMPsearch(const char *haystack, const char *needle)
     
     return -1; //match not found
 }
+
+/*===========================================================
+ Function Name: generateKMPtable
+ 
+ Inputs:
+    needle - word sought
+    table - KMP error Table
+ 
+ Output: None
+ ============================================================*/
 static void generateKMPtable(const char *needle, int *table)
 {
     int currentPos = 1;

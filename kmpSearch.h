@@ -5,12 +5,12 @@
 //  Open Source:/* https://en.wikipedia.org/wiki/Knuth–Morris–Pratt_algorithm */
 //
 
-#ifndef kmpSearch_h
-#define kmpSearch
+#ifndef _KMPSEARCH_H
+#define _KMPSEARCH_H
 
 #include <string.h>
 
-static void generateKMPtable(const char *needle, int *table);
 int KMPsearch(const char *haystack, const char *needle);
+static void generateKMPtable(const char *needle, int *table);
 
 #endif /* End of kmpSearch */
