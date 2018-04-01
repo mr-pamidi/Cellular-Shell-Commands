@@ -11,7 +11,15 @@
 #include <string.h>
 #include <stdint.h>
 
-int32_t KMPsearch(const char *haystack, const char *needle);
+#ifndef true
+#define true 1
+#endif
+
+#ifndef false
+#define false 0
+#endif
+
+uint8_t KMPsearch(const char *haystack, const char *needle);
 static void generateKMPtable(const char *needle, int32_t *table);
 
 #endif /* End of kmpSearch */

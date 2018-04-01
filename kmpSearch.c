@@ -16,7 +16,7 @@
  
  Output: String match starting position
  ============================================================*/
-int32_t KMPsearch(const char *haystack, const char *needle)
+uint8_t KMPsearch(const char *haystack, const char *needle)
 {
     int32_t haystackIdx=0, needleIdx=0;
     uint64_t haystackLen = strlen(haystack);
@@ -33,7 +33,7 @@ int32_t KMPsearch(const char *haystack, const char *needle)
             ++needleIdx;
             if (needleIdx == needleLen)
             {
-                return (haystackIdx-needleIdx); //match found
+                return true; //match found
             }
         }
         else
@@ -47,7 +47,7 @@ int32_t KMPsearch(const char *haystack, const char *needle)
         }
     }
     
-    return -1; //match not found
+    return false; //match not found
 }
 
 /*===========================================================
